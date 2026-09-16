@@ -1,0 +1,6 @@
+{
+  "name": "Q&A ACADEMY",
+  "description": "An online learning & AI quiz challenge platform featuring multiple disciplines, gamified progression, global leaderboard, and learner statistics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand-bg: #0F1115;
+  --color-brand-card: #161B22;
+  --color-brand-border: #1e293b;
+  --color-brand-indigo: #4f46e5;
+  --color-brand-indigo-hover: #4338ca;
+}

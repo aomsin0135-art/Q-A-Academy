@@ -1,0 +1,106 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile with their total points and learning statistics.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "The unique user ID matching Firebase Auth UID."
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User display name."
+        },
+        "totalScore": {
+          "type": "integer",
+          "description": "Accumulated experience points (XP)."
+        },
+        "streakCount": {
+          "type": "integer",
+          "description": "Streak duration in days."
+        },
+        "lastActiveDate": {
+          "type": "string",
+          "description": "Last active date string."
+        },
+        "stats": {
+          "type": "object",
+          "description": "Map tracking scores per subject category."
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation timestamp."
+        }
+      },
+      "required": ["uid", "email", "displayName", "totalScore", "streakCount", "createdAt"]
+    },
+    "History": {
+      "title": "History",
+      "description": "Quiz completion entry log.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Reference to the User."
+        },
+        "subjectId": {
+          "type": "string",
+          "description": "Subject identifier."
+        },
+        "subjectName": {
+          "type": "string",
+          "description": "Human-friendly subject name."
+        },
+        "difficulty": {
+          "type": "string",
+          "description": "Selected difficulty mode."
+        },
+        "educationLevel": {
+          "type": "string",
+          "description": "Student academic tier."
+        },
+        "questionType": {
+          "type": "string",
+          "description": "Question generation method."
+        },
+        "questionFormat": {
+          "type": "string",
+          "description": "Format structure of the quiz."
+        },
+        "score": {
+          "type": "integer",
+          "description": "Achieved score."
+        },
+        "totalQuestions": {
+          "type": "integer",
+          "description": "Total number of quiz questions."
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "Quiz submission time."
+        },
+        "details": {
+          "type": "array",
+          "description": "Detail list of user answers."
+        }
+      },
+      "required": ["uid", "subjectId", "subjectName", "score", "totalQuestions", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "The user record stored on the users collection path."
+    },
+    "/history/{historyId}": {
+      "schema": "History",
+      "description": "Archived log history records."
+    }
+  }
+}
