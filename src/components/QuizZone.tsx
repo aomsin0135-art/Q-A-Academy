@@ -82,7 +82,9 @@ export default function QuizZone({ progress, onQuizFinished }: QuizZoneProps) {
     setLoadingMessage(messages[Math.floor(Math.random() * messages.length)]);
 
     try {
-      const response = await fetch("/api/generate-questions-bulk", {
+      const response = await fetch(
+  "https://q-a-academy.onrender.com/api/generate-questions-bulk",
+        {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
