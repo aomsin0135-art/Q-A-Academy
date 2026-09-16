@@ -11,7 +11,7 @@ dotenv.config();
 dns.setDefaultResultOrder("ipv4first");
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 app.use(express.json());
 
